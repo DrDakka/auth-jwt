@@ -1,17 +1,14 @@
 import { getTemplate, mailTemplate } from './email.const.ts';
-import transporter from './transporter.ts';
+import resend from './transporter.ts';
 
-async function sendMail(
-  to: string,
-  subject: string,
-  html: string,
-): Promise<void> {
-  await transporter.sendMail({
-    from: process.env.SMTP_FROM || 'noreply@example.com',
-    to,
-    subject,
-    html,
-  });
+const FROM = process.env.RESEND_FROM || 'onboarding@resend.dev';
+
+async function sendMail(to: string, subject: string, html: string): Promise<void> {
+  const { error } = await resend.emails.send({ from: FROM, to, subject, html });
+
+  if (error) {
+    throw new Error(error.message);
+  }
 }
 
 async function sendTemplateMail(
