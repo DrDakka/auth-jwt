@@ -17,7 +17,7 @@ const buildCookieHeader = (
   value: string,
   maxAge: string,
 ) =>
-  `${cookieNames[type]}=${value}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=Strict`;
+  `${cookieNames[type]}=${value}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=None; Secure`;
 
 const verifyPwd = async (
   pwdhash: string,
