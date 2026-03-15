@@ -13,6 +13,9 @@ const routeMap = {
   [ep.idx]: {
     [methods.get]: { auth: false, schema: null, ctr: controllers.idx },
   },
+  [ep.demo]: {
+    [methods.post]: { auth: false, schema: null, ctr: controllers.demo.demo },
+  },
   [ep.auth]: {
     [methods.post]: {
       auth: false,

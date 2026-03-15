@@ -1,5 +1,6 @@
 const ep = {
   idx: '/',
+  demo: '/demo',
   auth: '/auth',
   refr: '/auth/refresh',
   lgt: '/auth/logout',
