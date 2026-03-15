@@ -1,0 +1,13 @@
+# IDE
+.idea
+.vscode
+
+# Node
+node_modules
+dist
+
+# Environment
+.env
+
+# MacOS
+.DS_Store
